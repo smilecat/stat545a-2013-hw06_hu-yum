@@ -4,3 +4,7 @@ __2013-10-21__
 
 -------------------------------------------------------------------------------------------------------------
 #### Introduction
+In this project, I use the **Canadian Large Fire Database (LFDB)** to explore the temporal and spatial distribution 
+and association of landscape-scale fire in Canada. LFDB is a compilation of forest fire data from all Canadian agencies, 
+including provinces, territories, and Parks Canada. For more information, please visit website of 
+[Natural Resources Canada](http://cwfis.cfs.nrcan.gc.ca/en_CA/lfdb)
