@@ -11,7 +11,11 @@ including provinces, territories, and Parks Canada. For more information, please
 
 #### How to replicate my analysis
 * Creat four new folders on an empty directory with names shown below:
-  * code
   * data
+  * code
   * figure
   * results
+* Download the following files into the empty directory (or folders):
+  * Download raw data [LFD_A02_5999_e.txt](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/LFD_A02_5999_e.txt) 
+into data folder
+  * 
