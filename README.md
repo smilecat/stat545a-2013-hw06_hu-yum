@@ -38,29 +38,29 @@ and click on "Source".
   * [SortData.tsv](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/SortData.tsv)
  ---- Rearrange the clean dataset by Year, Month, Province, Day and Size.
   * [TotalFirePerYr.tsv](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/TotalFirePerYr.tsv)
- ---- Count the total fire frequency per year
+ ---- Total fire frequency per year
   * [TotalFirePerYrCau.tsv](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/TotalFirePerYrCau.tsv)
- ---- Count the total fire frequency by combinations of year and cause.
+ ---- Total fire frequency by combinations of year and cause.
   * [TotalFirePerYearMon.tsv](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/TotalFirePerYearMon.tsv)
- ---- Count the total fire frequency by combinations of year and month (long format).
+ ---- Total fire frequency by combinations of year and month (long format).
   * [TotalFireByYrMon.tsv](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/TotalFireByYrMon.tsv)
- ---- Count the total fire frequency by combinations of year and month (wide format).
+ ---- Total fire frequency by combinations of year and month (wide format).
   * [TotalFirePerYrProCau.tsv](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/data/TotalFirePerYrProCau.tsv.tsv)
- ---- Count the total fire frequency by combinations of year, province and cause.
+ ---- Total fire frequency by combinations of year, province and cause.
 
 *  Figures:
-  * [FireGeoDis.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireGeoDis.png), 
-[FireSizeByMon.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeByMon.png), 
-[FireSizeGeoDisMon.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeGeoDisMon.png), 
-[FireSizeGeoDisPro.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeGeoDisPro.png), 
-[FireSizeMonTrd.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeMonTrd.png), 
-[GoogleFireMap.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/GoogleFireMap.png), 
-[HeatmapTotalFire.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/HeatmapTotalFire.png), 
-[HeatmapYrCor.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/HeatmapYrCor.png), 
-[TotalFirePerYearMon.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYearMon.png), 
-[TotalFirePerYr.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYr.png), 
-[TotalFirePerYrCau.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYrCau.png), 
-[TotalFirePerYrPro.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYrPro.png), 
-[TotalFirePerYrProCau.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYrProCau.png), 
-[capre.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/capre.png), 
-[capre.png.rda](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/capre.png.rda)
+[FireGeoDis.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireGeoDis.png), 
+  [FireSizeByMon.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeByMon.png), 
+  [FireSizeGeoDisMon.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeGeoDisMon.png), 
+  [FireSizeGeoDisPro.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeGeoDisPro.png), 
+  [FireSizeMonTrd.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/FireSizeMonTrd.png), 
+  [GoogleFireMap.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/GoogleFireMap.png), 
+  [HeatmapTotalFire.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/HeatmapTotalFire.png), 
+  [HeatmapYrCor.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/HeatmapYrCor.png), 
+  [TotalFirePerYearMon.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYearMon.png), 
+  [TotalFirePerYr.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYr.png), 
+  [TotalFirePerYrCau.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYrCau.png), 
+  [TotalFirePerYrPro.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYrPro.png), 
+  [TotalFirePerYrProCau.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/TotalFirePerYrProCau.png), 
+  [capre.png](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/capre.png), 
+  [capre.png.rda](https://github.com/smilecat/stat545a-2013-hw06_hu-yum/blob/master/figure/capre.png.rda)
