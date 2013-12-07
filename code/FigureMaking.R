@@ -1,4 +1,4 @@
-setwd("~/Statistics/stat545A/Final Project")
+#setwd("~/Statistics/stat545A/Final Project")
 
 library(plyr)          # for data aggregation
 library(RColorBrewer)  # for color setting

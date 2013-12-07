@@ -1,4 +1,4 @@
-setwd("~/Statistics/stat545A/Final Project")
+#setwd("~/Statistics/stat545A/Final Project")
 
 #### spline function ####
 my.spline = function(x,y)

@@ -1,5 +1,5 @@
 ## one script to rule them all
-setwd("~/Statistics/stat545A/Final Project")
+setwd("~/teaching/STAT545A/2013_STAT545A/private/HW6_workFromStudents/hu-yum")
 ## clean out any previous work
 outputs <- c("result/DataFormat.tsv",             # DataCleaning.R
              "data/CleanData.TSV",                # DataCleaning.R

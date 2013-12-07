@@ -1,5 +1,5 @@
 ## set working directory 
-setwd("~/Statistics/stat545A/Final Project")
+##setwd("~/Statistics/stat545A/Final Project")
 
 ## import data 
 # row 4090: "BILL'S" ----> use quot="\"" when importing data
