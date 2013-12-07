@@ -3,22 +3,22 @@
 __2013-10-21__
 
 ###  <dim id="1a">[Introduction](#1a)
-In this project, I will use the **Canadian Large Fire Database (LFDB)** to explore the temporal and spatial distribution and association of landscape-scale fire in Canada. LFDB is a compilation of forest fire data from all Canadian agencies, including provinces, territories, and Parks Canada. The data set includes only fires greater than 200 hectares in final size; these represent only a few percent of all fires but account for most of the area burned (usually more than 97%). For more information, please visit website of [Natural Resources Canada](http://cwfis.cfs.nrcan.gc.ca/en_CA/lfdb), LFDB can also be downloaded ditrectly from this webpage.
+In this project, I will use the **Canadian Large Fire Database (LFDB)** to explore the temporal and spatial distribution and association of landscape-scale fire in Canada. LFDB is a compilation of forest fire data from all Canadian agencies, including provinces, territories, and Parks Canada. The data set includes only fires greater than 200 hectares in final size; these represent only a few percent of all fires but account for most of the area burned (usually more than 97%). For more information, please visit the website of [Natural Resources Canada](http://cwfis.cfs.nrcan.gc.ca/en_CA/lfdb), LFDB can also be downloaded ditrectly from this webpage.
 
-All the data, code and figures for the project can be found on my [Github](https://github.com/smilecat/stat545a-2013-hw06_hu-yum).
+All the data, code and figures for the project can be found in this [github repository](https://github.com/smilecat/stat545a-2013-hw06_hu-yum).
 
 ### <dim id="2a">[Big Picture](#2a)
-In thie project, I will explore from the following aspects.
+In this project, I will explore the following issues.
 * <dim id="3a">[Data Description and Import](#3b)
 * <dim id="4a">[Temporal Distribution of Large Fire](#4b)
   * <dim id="4.1a">[How does Fire Frequency Change over Year?](#4.1b)
   * <dim id="4.2a">[How does Fire Size Change over Month?](#4.2b)
-* <dim id="5a">[Spatial Distribution of Large Fire](#5b)
+* <dim id="5a">[Spatial Distribution of Large Fires](#5b)
   * <dim id="5.1a">[Fire Frequency in Different Provinces](#5.1b)
-  * <dim id="5.2a">[Fire Frequency seen from Google Map](#5.2b)
+  * <dim id="5.2a">[Fire Frequency seen from Google Maps](#5.2b)
   * <dim id="5.3a">[Emulate Real Map with `ggplot2`](#5.3b) 
-* <dim id="6a">[Buble Chart: Seen from both Temporal and Spatial Aspects](#6b)
-* <dim id="7a">[Heatmap: Is the monthly distribution of Fire Frequency same every Year? ](#7b)
+* <dim id="6a">[Bubble Chart: Seen from both Temporal and Spatial Aspects](#6b)
+* <dim id="7a">[Heatmap: Is the monthly distribution of Fire Frequency similar every Year? ](#7b)
 * <dim id="8a">[Cubic Spline: Fluctuation of Fire Frequency over Year in Different Provinces](#8b)
 * <dim id="9a">[Conclusion](#9b)
 
@@ -28,7 +28,7 @@ The dataset is comma-delimited ASCII, named "LFD_A02_5999_e.txt" originally, wit
 The raw data incorporates the following 16 variables: 
 * `Year`, `Month`, `Day`, `Province`, `Fire_ID`, `Latitude`, `Longitude`, `Start_Date`, `Detect_Date`, `Cause`, `Size`, `Fire_Region`, `Fire_Zone`, `EcoZone`, `EcoRegion`, `EcoDistrict`. 
 
-I include 8 most meaningful variables in my data analysis, and summarize thier information and description in the table below.
+I include the eight most meaningful variables in my data analysis, and summarize thier information and description in the table below.
 
 ```{r echo = FALSE, results = 'asis'}
 library(xtable)
@@ -37,11 +37,11 @@ print(xtable(DataDes), type = "html", include.rownames = TRUE)
 ```
 > There is no record of January in the dataset, quite strange.
  
-* One needs to sepecify the arguments `quot="\""` and `comment.char=""` when importing the raw data, since there are symbols of `'` and `#` in the dataset. 
-* I assume most of the missing data is missing completely at random, which can be directly excluded from the dataset. However, I keep "UNK" Fire Causes (entry of missing value for `Cause`) in my clean dataset since its percentage is relatively large and it seems to have some missing pattern (all the fire causes in BC in 1999 were unkown!). 
-* I have already excluded two levels of Province, WBNP (Wood Buffalo National Park) and NP (National Park) from the raw data, which I think hard to make comparison with "real"" provinces.
-* Please visit [Wikipedia](http://en.wikipedia.org/wiki/Canadian_postal_abbreviations_for_provinces_and_territories) for more information about Canadian provinces and their abbreviations. Since the Large Fire Database is not updated, it incorporate some old versions of abbreviations, I update them in the clean dataset with "PQ", "NWT", "NF", "YK" changed to "QC", "NT", "NL" and "YT".
-* There are 11231 rows and 16 column in the raw dataset. After some data cleaning and maniputaion, there are 10874 rows of 8 columns left in the clean dataset.
+* One needs to sepecify the arguments `quote ="\""` and `comment.chare=""` when importing the raw data, since there are symbols of `'` and `#` in the dataset. 
+* I assume most of the missing data is missing completely at random, which can be directly excluded from the dataset JB: I DON'T UNDERSTAND THAT SENTENCE. However, I keep "UNK" Fire Causes (entry of missing value for `Cause`) in my clean dataset since its percentage is relatively large and it seems to have some missing pattern (all the fire causes in BC in 1999 were unkown!). 
+* I have already excluded two levels of Province, WBNP (Wood Buffalo National Park) and NP (National Park) from the raw data, which are clearly non-comparable with "regular" provinces, such as BC.
+* Please visit this [Wikipedia entry](http://en.wikipedia.org/wiki/Canadian_postal_abbreviations_for_provinces_and_territories) for more information about Canadian provinces and their abbreviations. Since the Large Fire Database is not updated, it incorporate some old versions of abbreviations, I update them in the clean dataset with "PQ", "NWT", "NF", "YK" changed to "QC", "NT", "NL" and "YT".
+* There are 11231 rows and 16 column in the raw dataset. After some data cleaning and manipulation, there are 10874 rows of 8 columns left in the clean dataset. *JB: no inline R code for those numbers?*
 
 Now let's import the clean dataset and load necessary packages.
 ```{r include = FALSE}
@@ -89,7 +89,7 @@ ggplot(gDat, aes(x = Year, y = TotalFire, color = Cause)) +
   ggtitle("Total Number of Large Fire over Year by Different Causes")
 ```
 
-I plot the total number of Large Fire against Year, and grouped by Causes in the right figure. There is no obvious increasing or decreasing trend for fire frequency. It's rather fluctuated with its peak at the year of 1979. Most of the fire, of course, was caused by lightning but still rather amount was caused by human, especially from 1959 to 1969.
+I plot the total number of Large Fire against Year, and grouped by Causes in the right figure. There is no obvious increasing or decreasing trend for fire frequency. It's rather fluctuated with its peak at the year of 1989. Most of the fire, of course, was caused by lightning but still rather amount was caused by human, especially from 1959 to 1969.
 
 #### <dim id="4.2b">[How does Fire Size Change over Month](#4.2a)
 ```{r, echo = FALSE, fig.width=10, fig.height=9}
@@ -148,7 +148,7 @@ ggplot(gDat, aes(x = Longitude, y = Latitude, color = factor(Month))) +
 ```
 Again it shows the seasonal trendence with the most Fire happening from May to August and in the middle of Canada (SK, MB, ON). 
 
-### <dim id="6b">[Buble Chart: Seen from both Temporal and Spatial Aspects](#6a)
+### <dim id="6b">[Bubble Chart: Seen from both Temporal and Spatial Aspects](#6a)
 In this part, I will replicate the Bubble Chart from Gapminder Project, which displays both the Temporal and Spatial trends of Large Fire. Based on the above figure, I make the area of solid circle proportional to its fire size at that location (not the exact fire size if it exceeds its provincial territory).
 
 ```{r, echo = FALSE, fig.width=9, fig.height=9}
@@ -165,7 +165,7 @@ ggplot(subset(jDat, Year %in% jYear),
 * Some super large fire happened in July, so there are not only frequent fire but also large fire happening in summer.
 * There was a huge fire happened in the area around YT and NT in 1979. But there is no fixed pattern of geographical distribution for large fire. 
 
-### <dim id="7b">[Heatmap: Is the monthly distribution of Fire Frequency same every Year?](#7a)
+### <dim id="7b">[Heatmap: Is the monthly distribution of Fire Frequency similar every Year?](#7a)
 To better show the temporal distribution of fire, I use heatmap to demonstrate the number of fire happening at every month and year. The darker the blue is, the more fire it presents. 
 ```{r}
 gDat <- daply(jDat, ~ Year + Month, function(x) length(x$Year))
