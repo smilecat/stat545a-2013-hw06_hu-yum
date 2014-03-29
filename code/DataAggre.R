@@ -1,4 +1,4 @@
-setwd("~/Statistics/stat545A/Final Project")
+#setwd("~/Statistics/stat545A/Final Project")
 jDat <- read.table("data/CleanData.tsv", header=T)
 str(jDat)
 tail(jDat)
